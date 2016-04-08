@@ -28,14 +28,18 @@ function listActorFactory(id, client){
 
     return {
         getState(_, cb){
-            console.log("Getting state");  
+            console.log("Getting state");
             cb(null, Object.keys(getListItem(id).items));
         },
         add(data, cb){
+            console.log('add item to list ' + id);
             var state = getListItem(id);
             var itemId = id + "-item-" + (Object.keys(state.items).length + 1);
             state.items[itemId] = itemId;
+            console.log('created ' + itemId);
+            console.log('change title ' + data);
             post("localhost:9001", "/invoke/" + itemId + "/changeTitle", data.title, function(data){
+                console.log('returning ' + data);
                 cb(data);
             });
         },
@@ -63,8 +67,10 @@ function itemActorFactory(id, client){
         complete(){},
         changeTitle(title, c){
             //Persist to DB
+            console.log('changing title');
             var state = getItem(id);
             state.title = title; // Persist to "DB"
+            console.log('title changed to ' + title);
             c(null, id);
         },
         del(_, cb){

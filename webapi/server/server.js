@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 var bodyParser = require('koa-bodyparser');
 
-app.use(cors());
+app.use(cors({methods: ['GET', 'PATCH', 'POST', 'DELETE']}));
 app.use(bodyParser());
 
 fs.readdirSync(path.join(__dirname, "controllers")).forEach(function(file) {
