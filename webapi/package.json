@@ -1,0 +1,24 @@
+{
+  "name": "webstep-demowebapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon --harmony --harmony_default_parameters  --harmony_destructuring --harmony_modules --harmony_sloppy_let  index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fetchy-request": "^0.8.7",
+    "koa": "latest",
+    "koa-bodyparser": "^2.0.1",
+    "koa-router": "latest",
+    "nodemon": "^1.9.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0"
+  }
+}

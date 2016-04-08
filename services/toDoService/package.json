@@ -1,0 +1,15 @@
+{
+  "name": "webstep-hello_service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon --harmony --harmony_default_parameters  --harmony_destructuring --harmony_modules --harmony_sloppy_let  index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "towtruck": "0.0.0"
+  }
+}
