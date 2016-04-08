@@ -1,10 +1,12 @@
 const koa = require("koa");
 const router = require('koa-router')();
+var cors = require('koa-cors');
 const app = koa();
 const fs = require('fs');
 const path = require('path');
 var bodyParser = require('koa-bodyparser');
 
+app.use(cors());
 app.use(bodyParser());
 
 fs.readdirSync(path.join(__dirname, "controllers")).forEach(function(file) {
